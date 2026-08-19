@@ -1,0 +1,161 @@
+.intro,
+.experienceSection {
+  padding: 120px 6vw;
+  background: #f8f7f2;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  margin: 70px auto 0;
+  border-top: 1px solid #c8c9c2;
+  border-bottom: 1px solid #c8c9c2;
+}
+
+.stats div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 48px 20px;
+}
+
+.stats div + div {
+  border-left: 1px solid #c8c9c2;
+}
+
+.stats strong {
+  color: #143238;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.stats span {
+  color: #68777a;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.splitSection {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  min-height: 680px;
+  background: #18383d;
+}
+
+.splitSection img {
+  width: 100%;
+  height: 680px;
+  object-fit: cover;
+}
+
+.splitSection > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 7vw;
+  color: white;
+}
+
+.splitSection p {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+}
+
+.splitSection h2,
+.linkSection h2 {
+  margin: 18px 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 66px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.splitSection span {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.9;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1260px;
+  margin: auto;
+}
+
+.cards article {
+  background: white;
+}
+
+.cards img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.cards div {
+  padding: 26px;
+}
+
+.cards h3 {
+  margin: 0 0 8px;
+  color: #143238;
+  font-family: var(--font-display);
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.cards p {
+  margin: 0;
+  color: #68777a;
+}
+
+.linkSection {
+  padding: 100px 6vw;
+  text-align: center;
+  background: #e3ece9;
+}
+
+.linkSection h2 {
+  color: #143238;
+}
+
+.linkSection a {
+  color: #143238;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .splitSection {
+    grid-template-columns: 1fr;
+  }
+
+  .splitSection img {
+    height: 480px;
+  }
+
+  .splitSection > div {
+    padding: 70px 8vw;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 520px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stats div + div {
+    border-top: 1px solid #c8c9c2;
+    border-left: 0;
+  }
+}

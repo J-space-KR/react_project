@@ -1,0 +1,415 @@
+.discoverySection,
+.voyageSection,
+.designIntro,
+.suiteSection,
+.onboardSection {
+  background: #fff;
+}
+
+.discoverySection {
+  padding: 150px 5vw 130px;
+}
+
+.discoverySection > h2,
+.voyageSection > h2,
+.designIntro h2,
+.suiteIntro h2,
+.onboardSection > h2,
+.contactSection h2 {
+  margin: 0;
+  color: #080808;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.discoverySection > h2 {
+  margin-bottom: 90px;
+}
+
+.discoverySection > h2 em {
+  font-weight: 400;
+}
+
+.discoveryGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1.25fr 1.2fr;
+  grid-template-rows: 315px 315px;
+  gap: 18px;
+}
+
+.discoveryCard {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+
+.discoveryCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.discoveryCard:hover img {
+  transform: scale(1.035);
+}
+
+.cardShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.46), transparent 48%);
+}
+
+.discoveryCard > div {
+  position: absolute;
+  z-index: 1;
+  top: 26px;
+  left: 28px;
+}
+
+.discoveryCard p {
+  margin: 0 0 8px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.discoveryCard h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.tall {
+  grid-row: 1 / 3;
+}
+
+.experience {
+  grid-column: 2 / 3;
+}
+
+.onboard {
+  grid-column: 3 / 4;
+}
+
+.voyageSection {
+  padding: 80px 5vw 150px;
+}
+
+.voyageSection > h2,
+.designIntro,
+.onboardSection > h2,
+.contactSection {
+  text-align: center;
+}
+
+.searchBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 270px;
+  align-items: end;
+  gap: 42px;
+  max-width: 1140px;
+  margin: 80px auto 90px;
+}
+
+.searchBox label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #616161;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+
+.searchBox select {
+  border: 0;
+  border-bottom: 1px solid #111;
+  border-radius: 0;
+  padding: 10px 0;
+  color: #222;
+  background: transparent;
+  font-size: 14px;
+}
+
+.searchBox > a,
+.contactSection a {
+  border: 1px solid #111;
+  padding: 17px 20px;
+  color: #111;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-align: center;
+  text-decoration: none;
+}
+
+.voyageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  max-width: 1340px;
+  margin: auto;
+}
+
+.designIntro {
+  padding: 120px 8vw 90px;
+}
+
+.designIntro p {
+  max-width: 760px;
+  margin: 28px auto;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.designIntro a,
+.suiteIntro a {
+  border-bottom: 1px solid #111;
+  padding-bottom: 7px;
+  color: #111;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+
+.designImage {
+  overflow: hidden;
+  min-height: 760px;
+  border-radius: 18px 18px 0 0;
+  background: #333;
+}
+
+.designImage img {
+  width: 100%;
+  height: 760px;
+  object-fit: cover;
+}
+
+.suiteSection {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 80px;
+  padding: 130px 4vw;
+}
+
+.suiteIntro > p {
+  margin: 0 0 42px;
+  border-bottom: 1px solid #111;
+  padding-bottom: 14px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.suiteIntro h2 {
+  margin-bottom: 30px;
+  font-size: clamp(38px, 4vw, 58px);
+}
+
+.suiteIntro > span {
+  display: block;
+  margin-bottom: 34px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.suiteCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 18px;
+  overflow: hidden;
+}
+
+.suiteCards > a {
+  position: relative;
+  min-height: 590px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.suiteCards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.suiteCards > a::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 55%, rgba(0, 0, 0, 0.62));
+  content: "";
+}
+
+.suiteCards div {
+  position: absolute;
+  z-index: 1;
+  right: 28px;
+  bottom: 30px;
+  left: 28px;
+}
+
+.suiteCards h3 {
+  margin: 0 0 28px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.suiteCards span {
+  border-bottom: 1px solid white;
+  padding-bottom: 6px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.onboardSection {
+  padding: 140px 4vw 150px;
+}
+
+.onboardSection > h2 {
+  margin-bottom: 100px;
+}
+
+.onboardSection > img {
+  width: 100%;
+  height: 680px;
+  object-fit: cover;
+}
+
+.onboardText {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  max-width: 900px;
+  margin: 64px auto 0;
+  text-align: left;
+}
+
+.onboardText h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.onboardText p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contactSection {
+  padding: 120px 5vw;
+  background: #dff3fb;
+}
+
+.contactSection h2 {
+  font-size: clamp(38px, 4.5vw, 64px);
+}
+
+.contactSection p {
+  margin: 32px 0;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+
+.contactSection a {
+  display: inline-block;
+  min-width: 260px;
+}
+
+@media (max-width: 900px) {
+  .discoveryGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 300px);
+  }
+
+  .tall {
+    grid-row: 1 / 3;
+  }
+
+  .experience,
+  .onboard {
+    grid-column: auto;
+  }
+
+  .searchBox {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .searchBox > a {
+    grid-column: 1 / 3;
+  }
+
+  .voyageGrid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+  }
+
+  .suiteSection {
+    grid-template-columns: 1fr;
+  }
+
+  .suiteIntro {
+    max-width: 520px;
+  }
+
+  .suiteCards {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .discoverySection {
+    padding: 100px 6vw;
+  }
+
+  .discoverySection > h2 {
+    margin-bottom: 54px;
+  }
+
+  .discoveryGrid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .discoveryCard {
+    height: 330px;
+  }
+
+  .searchBox {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .searchBox > a {
+    grid-column: auto;
+  }
+
+  .designImage,
+  .designImage img {
+    min-height: 520px;
+    height: 520px;
+  }
+
+  .suiteCards {
+    grid-template-columns: repeat(3, 78vw);
+  }
+
+  .suiteCards > a {
+    min-height: 500px;
+  }
+
+  .onboardSection > img {
+    height: 480px;
+  }
+
+  .onboardText {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

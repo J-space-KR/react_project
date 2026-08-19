@@ -1,0 +1,382 @@
+.header {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  min-height: 116px;
+  pointer-events: none;
+}
+
+.solid {
+  position: relative;
+  min-height: 104px;
+  background: #171715;
+}
+
+.logo {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  display: block;
+  width: 104px;
+  pointer-events: auto;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* 공식 사이트처럼 화면 아래 가운데에 떠 있는 둥근 메뉴입니다. */
+.floatingMenu {
+  position: fixed;
+  z-index: 2200;
+  bottom: 24px;
+  left: 50%;
+  display: flex;
+  height: 64px;
+  gap: 8px;
+  border-radius: 60px;
+  padding: 10px;
+  overflow: hidden;
+  background-color: rgba(30, 30, 30, 0.56);
+  backdrop-filter: blur(20px);
+  transform: translateX(-50%);
+  transition: opacity 0.25s;
+}
+
+.floatingMenu.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menuButton,
+.voyageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  border: 0;
+  border-radius: 100px;
+  padding: 14px 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 2.8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menuButton:hover,
+.voyageButton:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menuButton svg {
+  width: 11px;
+  height: 10px;
+  stroke: white;
+}
+
+.voyageButton {
+  width: 203px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.voyageButton svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: white;
+  stroke-width: 1.3;
+}
+
+/* 메뉴를 열면 배경 영상 위에 어두운 유리처럼 보이는 화면이 나타납니다. */
+.menuOverlay {
+  position: fixed;
+  z-index: 2150;
+  inset: 0;
+  visibility: hidden;
+  overflow: auto;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.76);
+  backdrop-filter: blur(36px);
+  opacity: 0;
+  transition: visibility 0.45s, opacity 0.45s;
+}
+
+.menuOverlay.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.closeButton {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  padding: 10px;
+  background: transparent;
+}
+
+.closeButton span {
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  width: 24px;
+  height: 1px;
+  background: white;
+}
+
+.closeButton span:first-child {
+  transform: rotate(45deg);
+}
+
+.closeButton span:last-child {
+  transform: rotate(-45deg);
+}
+
+.topActions {
+  position: absolute;
+  top: 34px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topActions a {
+  min-width: 222px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 100px;
+  padding: 16px 30px;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.topActions .filledAction {
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.menuContent {
+  display: grid;
+  grid-template-columns: minmax(340px, 450px) minmax(420px, 650px);
+  justify-content: center;
+  gap: clamp(50px, 8vw, 130px);
+  min-height: calc(100vh - 170px);
+  padding: 145px 7vw 120px;
+}
+
+.nav {
+  align-self: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.36);
+  padding-right: 52px;
+}
+
+.navRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  padding-left: 25px;
+}
+
+.step {
+  position: absolute;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+}
+
+.nav a {
+  color: white;
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 300;
+  letter-spacing: 2.8px;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+  opacity: 0.45;
+}
+
+.featured {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.featured a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 340px;
+  padding: 28px;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+}
+
+.featured a::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(transparent 35%, rgba(0, 0, 0, 0.68));
+}
+
+.featured img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.featured a:hover img {
+  transform: scale(1.03);
+}
+
+.featured span,
+.featured strong {
+  position: relative;
+  z-index: 1;
+}
+
+.featured span {
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.featured strong {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.menuFooter {
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.36);
+  padding: 34px 0 38px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.menuFooter div {
+  display: flex;
+  gap: 34px;
+}
+
+.menuFooter a {
+  color: white;
+  text-decoration: none;
+}
+
+.menuFooter a:first-child {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+@media (max-width: 955px) {
+  .menuContent {
+    display: block;
+    min-height: 100vh;
+    padding: 115px 20px 250px;
+  }
+
+  .nav {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .navRow {
+    min-height: 48px;
+  }
+
+  .nav a {
+    font-size: 20px;
+  }
+
+  .featured {
+    display: none;
+  }
+
+  .topActions {
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    flex-direction: column;
+  }
+
+  .topActions a {
+    width: 100%;
+  }
+
+  .menuFooter {
+    right: 20px;
+    bottom: 132px;
+    left: 20px;
+    padding: 28px 0;
+  }
+
+  .menuFooter > span {
+    display: none;
+  }
+
+  .menuFooter div {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .closeButton {
+    top: 10px;
+    right: 10px;
+    left: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 94px;
+  }
+
+  .logo {
+    top: 15px;
+    width: 90px;
+  }
+
+  .voyageButton {
+    display: none;
+  }
+}

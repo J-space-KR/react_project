@@ -1,0 +1,83 @@
+/* 공식 사이트와 같은 외부 폰트 파일을 불러옵니다. */
+@font-face {
+  font-family: "SaolDisplay";
+  src: url("https://www.fourseasonsyachts.com/_next/static/media/15142886cfc68bd3-s.p.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SaolDisplay";
+  src: url("https://www.fourseasonsyachts.com/_next/static/media/059b62ebe5b3dc87-s.p.woff2")
+    format("woff2");
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("https://www.fourseasonsyachts.com/_next/static/media/50d86de80db81a86-s.p.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("https://www.fourseasonsyachts.com/_next/static/media/ee6a01a5cd8b8f13-s.p.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
+  --font-display: "SaolDisplay", "GaramondMTPro", Georgia, serif;
+  --font-serif: "GaramondMTPro", Georgia, serif;
+  --font-sans: "HelveticaNeue", "Helvetica Neue", Arial, "Noto Sans KR",
+    sans-serif;
+  font-family: var(--font-sans);
+  color: #111;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  color: white;
+  background: #a36e3b;
+}

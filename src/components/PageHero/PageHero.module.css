@@ -1,0 +1,43 @@
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 540px;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 27, 31, 0.43);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: min(90%, 840px);
+  text-align: center;
+}
+
+.content p {
+  margin: 0 0 18px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+}
+
+.content h1 {
+  margin: 0 0 24px;
+  font-family: var(--font-display);
+  font-size: clamp(50px, 8vw, 100px);
+  font-weight: 400;
+}
+
+.content span {
+  display: block;
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.8;
+}

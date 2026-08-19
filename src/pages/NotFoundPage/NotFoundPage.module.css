@@ -1,0 +1,32 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 70vh;
+  padding: 60px 6vw;
+  color: #143238;
+  background: #f8f7f2;
+  text-align: center;
+}
+
+.page p {
+  color: #a36e3b;
+  letter-spacing: 0.2em;
+}
+
+.page h1 {
+  margin: 16px 0 32px;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 400;
+}
+
+.page a {
+  border-bottom: 1px solid #143238;
+  padding-bottom: 7px;
+  color: inherit;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+}
