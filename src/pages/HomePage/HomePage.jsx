@@ -7,43 +7,40 @@ import styles from "./HomePage.module.css";
 const discoveryItems = [
   {
     id: 1,
-    label: "REGIONS",
-    title: "Unparalleled Access",
-    image: "/images/exumas.webp",
+    label: "제품",
+    title: "피어나는 스킨케어",
+    image: "/images/꽃_페이셜세럼.jpeg",
     path: "/voyages",
     size: "tall",
   },
   {
     id: 2,
-    label: "OUR SUITES",
-    title: "Welcome Home",
-    image: "/images/suite-living.jpg",
+    label: "컬렉션",
+    title: "블루밍 컬렉션",
+    image: "/images/꽃_실크페탈 리치크림.jpeg",
     path: "/suites",
     size: "small",
   },
   {
     id: 3,
-    label: "OUR YACHTS",
-    title: "Four Seasons I & II",
-    image: "/images/yacht-hero.webp",
+    label: "브랜드 이야기",
+    title: "꽃, KKOT",
+    image: "/images/꽃_전체 라인.jpeg",
     path: "/yacht",
     size: "wide",
   },
   {
     id: 4,
-    label: "EXPERIENCES",
-    title: "Inspired For You",
-    image: "/images/dining.png",
+    label: "성분",
+    title: "자연에서 온 순수한 성분",
+    image: "/images/자연에서.png",
     path: "/yacht",
     size: "experience",
   },
   {
     id: 5,
-    label: "LIFE ONBOARD",
-    title: "Voyages of Pure Connection",
-    image: "/images/wellness.webp",
-    path: "/yacht",
     size: "onboard",
+    blank: true,
   },
 ];
 
@@ -55,52 +52,56 @@ function HomePage() {
       <Hero />
 
       <section className={styles.discoverySection}>
-        <h2>
-          MODERN <em>YACHTING</em> WITH
-          <br />FOUR SEASONS
-        </h2>
+        <h2>꽃 KKOT</h2>
 
         <div className={styles.discoveryGrid}>
-          {discoveryItems.map((item) => (
-            <Link
-              key={item.id}
-              className={`${styles.discoveryCard} ${styles[item.size]}`}
-              to={item.path}
-            >
-              <img src={item.image} alt={item.title} />
-              <span className={styles.cardShade} />
-              <div>
-                <p>{item.label}</p>
-                <h3>{item.title}</h3>
-              </div>
-            </Link>
-          ))}
+          {discoveryItems.map((item) =>
+            item.blank ? (
+              <div
+                key={item.id}
+                className={`${styles.discoveryCard} ${styles[item.size]} ${styles.blankCard}`}
+              />
+            ) : (
+              <Link
+                key={item.id}
+                className={`${styles.discoveryCard} ${styles[item.size]}`}
+                to={item.path}
+              >
+                <img src={item.image} alt={item.title} />
+                <span className={styles.cardShade} />
+                <div>
+                  <p>{item.label}</p>
+                  <h3>{item.title}</h3>
+                </div>
+              </Link>
+            )
+          )}
         </div>
       </section>
 
       <section className={styles.voyageSection}>
-        <h2>EXPLORE UPCOMING<br />VOYAGES</h2>
+        <h2>신제품<br />NEW ARRIVALS</h2>
 
         <div className={styles.searchBox}>
           <label>
-            DESTINATION
-            <select defaultValue="Destination">
-              <option>Destination</option>
-              <option>Mediterranean</option>
-              <option>Caribbean</option>
+            카테고리
+            <select defaultValue="전체">
+              <option>전체</option>
+              <option>SKINCARE</option>
+              <option>CLEANSING</option>
             </select>
           </label>
 
           <label>
-            DATES
-            <select defaultValue="Dates">
-              <option>Dates</option>
-              <option>May 2027</option>
-              <option>January 2028</option>
+            타입
+            <select defaultValue="전체">
+              <option>전체</option>
+              <option>NEW</option>
+              <option>BEST</option>
             </select>
           </label>
 
-          <Link to="/voyages">VIEW ALL VOYAGES</Link>
+          <Link to="/voyages">전체 제품 보기</Link>
         </div>
 
         <div className={styles.voyageGrid}>
@@ -111,27 +112,26 @@ function HomePage() {
       </section>
 
       <section className={styles.designIntro}>
-        <h2>EXCEPTIONAL DESIGN</h2>
+        <h2>피어나는 과정의 아름다움</h2>
         <p>
-          Open spaces, thoughtful details and seamless indoor-outdoor living
-          create a quiet and comfortable experience at sea.
+          꽃은 피어나는 순간만 아름다운 것이 아니라, 피어나는 과정 자체가
+          아름답다고 믿습니다. KKOT는 매일의 피부 변화를 함께합니다.
         </p>
-        <Link to="/yacht">EXPLORE FOUR SEASONS I</Link>
+        <Link to="/yacht">브랜드 이야기 보기</Link>
       </section>
 
       <section className={styles.designImage}>
-        <img src="/images/yacht-hero.webp" alt="바다를 항해하는 Four Seasons 요트" />
+        <img src="/images/꽃_전체 라인.jpeg" alt="꽃 KKOT 브랜드 이미지" />
       </section>
 
       <section className={styles.suiteSection}>
         <div className={styles.suiteIntro}>
-          <p>FOUR SEASONS I</p>
-          <h2>RETREAT TO<br />EXCEPTIONAL<br />SUITES</h2>
+          <p>COLLECTION</p>
+          <h2>컬렉션으로<br />만나는<br />KKOT</h2>
           <span>
-            Floor-to-ceiling windows, ocean-facing terraces and comfortable
-            residential-style spaces.
+            피부 고민과 취향에 맞춰 고른 세 가지 컬렉션을 만나보세요.
           </span>
-          <Link to="/suites">EXPLORE SUITES</Link>
+          <Link to="/suites">컬렉션 보기</Link>
         </div>
 
         <div className={styles.suiteCards}>
@@ -140,7 +140,7 @@ function HomePage() {
               <img src={suite.image} alt={suite.name} />
               <div>
                 <h3>{suite.name}</h3>
-                <span>VIEW SUITE</span>
+                <span>컬렉션 보기</span>
               </div>
             </Link>
           ))}
@@ -148,22 +148,22 @@ function HomePage() {
       </section>
 
       <section className={styles.onboardSection}>
-        <h2>UNPARALLELED,<br />AT SEA AND ONBOARD</h2>
-        <img src="/images/dining.png" alt="요트의 다이닝 공간" />
+        <h2>자연에서 온<br />순수한 성분</h2>
+        <img src="/images/자연에서.png" alt="KKOT 성분 이미지" />
 
         <div className={styles.onboardText}>
-          <h3>Dining</h3>
+          <h3>스킨케어 철학</h3>
           <p>
-            Local ingredients, seasonal inspiration and attentive service come
-            together at every table onboard.
+            피어나는 순간이 아니라 피어나는 과정 자체가 아름답다고 믿습니다.
+            자연 유래 성분으로 편안한 하루를 만듭니다.
           </p>
         </div>
       </section>
 
       <section className={styles.contactSection}>
-        <h2>GET IN TOUCH WITH A<br />PERSONAL YACHT<br />CONSULTANT</h2>
-        <p>TEL: 1-877-521-5708</p>
-        <Link to="/inquire">CONNECT NOW</Link>
+        <h2>궁금한 점이<br />있으신가요?</h2>
+        <p>EMAIL: hello@kkot-beauty.com</p>
+        <Link to="/inquire">문의하기</Link>
       </section>
     </div>
   );

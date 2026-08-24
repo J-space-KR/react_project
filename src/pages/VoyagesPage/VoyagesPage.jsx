@@ -5,7 +5,7 @@ import VoyageCard from "../../components/VoyageCard/VoyageCard";
 import { voyages } from "../../data/siteData";
 import styles from "./VoyagesPage.module.css";
 
-const regions = ["All", "Mediterranean", "Caribbean"];
+const regions = ["All", "SKINCARE", "CLEANSING"];
 
 function VoyagesPage() {
   const [selectedRegion, setSelectedRegion] = useState("All");
@@ -19,14 +19,14 @@ function VoyagesPage() {
   return (
     <div>
       <PageHero
-        eyebrow="VOYAGE FINDER"
-        title="Follow the sun"
-        description="가고 싶은 지역을 선택하고, 나에게 맞는 항해를 찾아보세요."
-        image="/images/positano-sunset.webp"
+        eyebrow="PRODUCTS"
+        title="피어나는 스킨케어"
+        description="피부 고민에 맞는 제품을 선택하고, 나에게 맞는 케어를 찾아보세요."
+        image="/images/꽃_전체 라인.jpeg"
       />
 
       <section className={styles.section}>
-        <SectionTitle eyebrow="WHERE TO NEXT?" title="Explore our voyages" />
+        <SectionTitle eyebrow="ALL PRODUCTS" title="전체 제품" />
 
         <div className={styles.filters}>
           {regions.map((region) => (
@@ -36,12 +36,12 @@ function VoyagesPage() {
               type="button"
               onClick={() => setSelectedRegion(region)}
             >
-              {region}
+              {region === "All" ? "전체" : region}
             </button>
           ))}
         </div>
 
-        <p className={styles.resultText}>{filteredVoyages.length} VOYAGES</p>
+        <p className={styles.resultText}>{filteredVoyages.length}개의 제품</p>
 
         <div className={styles.grid}>
           {filteredVoyages.map((voyage) => (

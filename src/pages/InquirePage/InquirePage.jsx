@@ -4,7 +4,7 @@ import styles from "./InquirePage.module.css";
 const initialForm = {
   name: "",
   email: "",
-  region: "Mediterranean",
+  region: "제품 문의",
   message: "",
 };
 
@@ -30,11 +30,10 @@ function InquirePage() {
   return (
     <section className={styles.page}>
       <div className={styles.intro}>
-        <p>BEGIN YOUR JOURNEY</p>
-        <h1>Let&apos;s plan something extraordinary</h1>
+        <p>CONTACT US</p>
+        <h1>궁금한 점을 남겨주세요</h1>
         <span>
-          이 페이지는 실제 전송 API가 없는 React 폼 이에요. 입력값은
-          useState로 관리합니다.
+          제품, 컬렉션, 협업 등 무엇이든 편하게 남겨주세요.
         </span>
       </div>
 
@@ -63,10 +62,11 @@ function InquirePage() {
         </label>
 
         <label>
-          Preferred region
+          문의 유형
           <select name="region" value={form.region} onChange={handleChange}>
-            <option>Mediterranean</option>
-            <option>Caribbean</option>
+            <option>제품 문의</option>
+            <option>컬렉션 문의</option>
+            <option>기타 문의</option>
           </select>
         </label>
 
@@ -80,11 +80,11 @@ function InquirePage() {
           />
         </label>
 
-        <button type="submit">SEND INQUIRY</button>
+        <button type="submit">문의 보내기</button>
 
         {isSubmitted && (
           <p className={styles.success}>
-            {form.name}님, 문의가 저장되었습니다. (수업용 화면입니다.)
+            {form.name}님, 문의가 접수되었습니다. 곧 답변드릴게요.
           </p>
         )}
       </form>

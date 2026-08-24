@@ -95,6 +95,10 @@
   grid-column: 3 / 4;
 }
 
+.blankCard {
+  background: #fff;
+}
+
 .voyageSection {
   padding: 80px 5vw 150px;
 }

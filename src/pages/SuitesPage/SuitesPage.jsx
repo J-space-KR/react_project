@@ -7,17 +7,17 @@ function SuitesPage() {
   return (
     <div>
       <PageHero
-        eyebrow="OUR SUITES"
-        title="Wake up to the sea"
-        description="모든 객실에서 바다를 바라보고, 나만의 테라스에서 하루를 시작합니다."
-        image="/images/suite-terrace.jpg"
+        eyebrow="COLLECTION"
+        title="컬렉션으로 만나는 KKOT"
+        description="피부 고민과 취향에 맞춰 고른 세 가지 컬렉션을 만나보세요."
+        image="/images/꽃_전체 라인.jpeg"
       />
 
       <section className={styles.section}>
         <SectionTitle
-          eyebrow="A HOME ON THE WATER"
-          title="Space made personal"
-          description="서로 다른 크기와 분위기를 가진 세 가지 스위트를 살펴보세요."
+          eyebrow="OUR COLLECTIONS"
+          title="나에게 맞는 컬렉션"
+          description="서로 다른 피부 고민에 맞춘 세 가지 컬렉션입니다."
         />
 
         <div className={styles.list}>
@@ -26,10 +26,10 @@ function SuitesPage() {
               <img src={suite.image} alt={suite.name} />
 
               <div>
-                <p>SUITE 0{index + 1}</p>
+                <p>COLLECTION 0{index + 1}</p>
                 <h2>{suite.name}</h2>
                 <span>{suite.description}</span>
-                <button type="button">VIEW DETAILS</button>
+                <button type="button">자세히 보기</button>
               </div>
             </article>
           ))}

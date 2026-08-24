@@ -5,8 +5,8 @@ function NotFoundPage() {
   return (
     <section className={styles.page}>
       <p>404</p>
-      <h1>We could not find this page.</h1>
-      <Link to="/">BACK TO HOME</Link>
+      <h1>페이지를 찾을 수 없어요.</h1>
+      <Link to="/">홈으로 돌아가기</Link>
     </section>
   );
 }
