@@ -77,16 +77,16 @@ src
 중요한 발표나 실제 서비스에서는 영상 한 개만 `public/videos/hero.mp4`로 저장한 뒤
 주소를 `/videos/hero.mp4`로 바꾸는 방법이 더 안전합니다. 이미지와 영상을 전부 내려받을 필요는 없습니다.
 
-## 폰트도 외부 주소를 사용하나요?
+## 폰트는 어떻게 불러오나요?
 
-네. 공식 사이트와 비슷한 글자 모양을 확인할 수 있도록 아래 폰트를 외부 주소로 불러옵니다.
+모두 무료로 쓸 수 있는 폰트를 외부 CDN으로 불러옵니다.
 
-- 큰 영문 제목: `Saol Display`
-- 메뉴와 작은 글자: `Helvetica Neue`
-- 일부 본문 세리프: `Garamond MT Pro`
+- 큰 영문 제목: `Cormorant Garamond` (Google Fonts)
+- 일부 본문 세리프: `EB Garamond` (Google Fonts)
+- 메뉴와 작은 글자: `Inter` (Google Fonts), 한글은 `Pretendard`
 
-`index.html`에는 Fonts.net 스타일시트가 있고, `src/styles/global.css`에는 공식 사이트의
-폰트 파일 주소와 수업에서 사용할 CSS 변수(`--font-display`, `--font-serif`, `--font-sans`)가 있습니다.
+`index.html`에 폰트 스타일시트가 있고, `src/styles/global.css`에는 수업에서 사용할
+CSS 변수(`--font-display`, `--font-serif`, `--font-sans`)가 있습니다.
 
 ```css
 .title {
